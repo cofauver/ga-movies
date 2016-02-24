@@ -1,0 +1,10 @@
+.movie-input{
+	width:90%;
+}
+.movie-poster{
+	max-height:30px;
+}
+
+li{
+	display: inline-block;
+}
