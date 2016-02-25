@@ -30,3 +30,7 @@ input.addEventListener('input', function(){
 	requestApiSearch(input.value);
 });
 
+document.getElementById('more-results').addEventListener('click',function(){
+	
+});
+
