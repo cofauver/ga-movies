@@ -2,24 +2,25 @@
 <html>
 <head>
 	<title>Movies!</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="styles/normalize.css">
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body>
 	<header>
 		<h1>Find your favorite movies</h1>
-		<form>
-			<input class="movie-input" type="text">
-		</form>
+
+		<input id="movie-input" type="text">
+
 	</header>
 	
-	<rbl-repeater element="ul" shadow="true" content='[{"title": "Game of Thrones", "img": "http://ia.media-imdb.com/images/M/MV5BMTg4NDg0NTY1OV5BMl5BanBnXkFtZTgwNzY3NDI3NzE@._V1_SX300.jpg"},{"title": "Harry Potter", "img": "http://ia.media-imdb.com/images/M/MV5BMTg5Mjc5OTQxM15BMl5BanBnXkFtZTcwOTM1MDk3MQ@@._V1._CR114,24,284,413_SY132_CR1,0,89,132_AL_.jpg_V1_SX300.jpg"}]'>
-		
+	<rbl-repeater element="ul" shadow="true" content='[{"Title": "Game of Thrones", "Poster": "http://ia.media-imdb.com/images/M/MV5BMTg4NDg0NTY1OV5BMl5BanBnXkFtZTgwNzY3NDI3NzE@._V1_SX300.jpg"},{"Title": "Harry Potter", "Poster": "http://ia.media-imdb.com/images/M/MV5BMTg5Mjc5OTQxM15BMl5BanBnXkFtZTcwOTM1MDk3MQ@@._V1._CR114,24,284,413_SY132_CR1,0,89,132_AL_.jpg_V1_SX300.jpg"}]'>
     	<li>
-    		<img class="movie-poster" src="${img}">
-    		${title}
+    		<img class="movie-poster" src="${Poster}">
+    		<h1>${Title}</h1>
     	</li>
 	</rbl-repeater>
+	<div onclick="makeAPI">See more...</div>
 
 	<script type="text/javascript" src="scripts/app.js"></script>
 	<script type="text/javascript" src="scripts/rbl-repeater.js"></script>

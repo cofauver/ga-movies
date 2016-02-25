@@ -1,10 +1,16 @@
-.movie-input{
+#movie-input{
 	width:90%;
+	border-radius: 10px;
+	margin:auto;
 }
 .movie-poster{
-	max-height:30px;
+	height:90px;
+}
+.movie-title{
+	display: inline;
 }
 
 li{
-	display: inline-block;
+	list-style: none;
+	border:1px solid black;
 }
