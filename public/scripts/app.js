@@ -29,6 +29,17 @@ function getMovieDetails(title){
 	xmlhttp.send();
 };
 
+function getFavorites(){
+
+};
+
+function postFavorite(movie){
+	var url  = '/favorites';
+	xmlhttp.open('POST', url,  true);
+	xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	xmlhttp.send(JSON.stringify(movie));
+};
+
 /* 
 This watches for changes in the state of xmlhttp. When
 the readyState is 4 (request finished and response is ready) 
@@ -37,6 +48,7 @@ push the results to the current list of movies.
 */ 
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    	console.log(xmlhttp.responseText);
         var response = JSON.parse(xmlhttp.responseText);
         if(response.Search){
         	var newResults = response.Search;
@@ -93,6 +105,7 @@ function addFavoriteButtonListeners(){
 	for(var i = 0; i<len; i++){
 		var button = favoriteButtons[i];
 		button.addEventListener('click', function(){
+			postFavorite();
 			console.log('success');
 		});	
 	};
@@ -140,6 +153,10 @@ function createResultsListHTML(data) {
     return html;
 };
 
+/*
+Builds the detail text html that is revealed
+when a user clicks on a specific movie.
+*/
 function createDetailsHTML(movie){
 	console.log(movie);
 	var html = '';

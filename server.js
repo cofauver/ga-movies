@@ -16,7 +16,7 @@ app.get('/favorites', function(req, res){
   res.send(data);
 });
 
-app.get('favorites', function(req, res){
+app.post('/favorites', function(req, res){
   if(!req.body.name || !req.body.oid){
     res.send("Error");
     return
@@ -28,6 +28,8 @@ app.get('favorites', function(req, res){
   res.send(data);
 });
 
-app.listen(3000, function(){
+var port = process.env.PORT || 3000;
+
+app.listen(port , function(){
   console.log("Listening on port 3000");
 });
