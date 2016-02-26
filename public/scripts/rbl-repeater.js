@@ -36,7 +36,7 @@ class RblRepeater extends HTMLElement {
         const content = RblRepeater.fromJson(this.getAttribute('content'));
         const element = this.getAttribute('element');
         /*This is where I altered to make it responsive. I inserted the template*/ 
-        const template = (this.innerHTML) ? this.innerHTML:'<li><img class="movie-poster" src="${Poster}"><h1>${Title}</h1></li>';
+        const template = (this.innerHTML) ? this.innerHTML:'<li><img class="movie-poster" src="${Poster}"><h1>${Title}</h1></li><span class="like"> <3 </span>';
         // console.log(template); // for debugging purposes
         let html = (element !== null ) ? "<" + element.toLowerCase() + ">" : "";
         if (Array.isArray(content)) {
