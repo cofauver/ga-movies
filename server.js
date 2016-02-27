@@ -17,6 +17,7 @@ app.get('/favorites', function(req, res){
 });
 
 app.post('/favorites', function(req, res){
+  console.log(req);
   if(!req.body.Title || !req.body.imdbID){
     console.log(req.body);
     res.send(400);
