@@ -203,10 +203,14 @@ function addTitleClickListeners(){
 		var currentTitle = titles[i];
 		currentTitle.addEventListener('click', function(event){
 			var movie = getClickedMovie(event);
-			getMovieDetails(movie.imdbID);
+			getMovieDetails(movie.imdbID)
 		});	
 	};
 };
+
+function toggleMovieDetails(){
+
+}
 
 
 /*
@@ -246,7 +250,7 @@ function createResultsListHtml(data) {
     // Step through the rows of the data.
     for(var item in data) {
         var itemData = data[item];
-        html += '<li data-list-index="' + item + '">'
+        html += '<li class="movie-listing" data-list-index="' + item + '">'
         if(itemData.Poster === 'N/A'){
         	html += '<img class="movie-poster" src="images/bobines-video-icon.png">';
         }else{
@@ -291,6 +295,9 @@ when a user clicks on a specific movie.
 */
 function createDetailsHtml(movie){
 	var html = '';
+	html += '<p><strong>Year: </strong>' + movie.Year + '</p>';
+	html += '<p><strong>Genre: </strong>' + movie.Genre + '</p>';
+	html += '<p><strong>Starring: </strong>' + movie.Actors + '</p>';
 	html += '<p>'+ movie.Plot + '</p>';
     return html;
 };
