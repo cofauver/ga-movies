@@ -17,8 +17,9 @@ app.get('/favorites', function(req, res){
 });
 
 app.post('/favorites', function(req, res){
-  if(!req.body.name || !req.body.oid){
-    res.send("Error");
+  if(!req.body.Title || !req.body.imdbID){
+    console.log(req.body);
+    res.send(400);
     return
   }
   var data = JSON.parse(fs.readFileSync('./data.json'));
