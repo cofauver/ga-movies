@@ -78,6 +78,9 @@ section{
 	margin: 30px;
 	display: inline;
 }
+#more-results{
+	visibility: hidden;
+}
 
 #movie-input{
 	border-radius: 5px;

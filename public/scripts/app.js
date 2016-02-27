@@ -7,7 +7,7 @@ var form = document.getElementById('movie-form');
 var moreResultsButton = document.getElementById('more-results');
 var favoriteButtons;
 var xmlhttp = new XMLHttpRequest();
-var currentQuery, currentQueryPage;
+var currentQuery, currentQueryPage, totalResults;
 var currentResults = [];
 
 
@@ -91,6 +91,7 @@ xmlhttp.onreadystatechange = function() {
         }else if(response.Search){
 						// ^ Search is the name of the attribute 
 						// containing the movie list in the API response.
+			totalResults = response.totalResults;
  			updateSearchDisplay(response.Search);
         }else if(response.Plot){
         				// ^ Plot is an attribute only available
@@ -113,7 +114,8 @@ function updateSearchDisplay(newResults){
     new results and pushing them one by one to the currentResults.
     */
 	var listHtml = createResultsListHtml(currentResults);        						
-	insertHtml('search-results', listHtml); 
+	insertHtml('search-results', listHtml);
+	toggleMoreResultsButton();
 	addFavoriteButtonListeners(); 
 	addTitleClickListeners();
 }
@@ -134,6 +136,18 @@ function openDetailsView(movieDetails, elementId){
 	var detailHtml = createDetailsHtml(movieDetails);
 	insertHtml(elementId, detailHtml);
 }
+
+/*
+Show or hide the more results button based on whether 
+there are more 
+*/
+function toggleMoreResultsButton(){
+	if(currentResults.length < totalResults){
+		moreResultsButton.style.visibility = 'visible';
+	}else{
+		moreResultsButton.style.visibility = 'hidden';
+	}
+};
 
 
 /***************************************************
@@ -282,10 +296,5 @@ function createDetailsHtml(movie){
 };
 
 
-// This function ties things up.
-function run() {
-	getFavorites();    
-}
-
-// Run everything when the document loads.
-window.onload = run;
+// to be run when the page loads.
+window.onload = getFavorites;
