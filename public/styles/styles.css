@@ -1,16 +1,13 @@
-html,body { 
-	height:100%; 
-}
 aside{
 	padding:20px;
 	float: left;
-	width: 30%;
+	width: 35%;
 	height: 100%;
-	color:white;
-	background-color: #00648C;
+	color:#00648C;
 }
 
 header{
+	color:#00648C;
 	text-align: center;
 	padding-bottom: 40px;
 }
@@ -22,15 +19,19 @@ header>h1{
 	display: inline;
 }
 
+html,body { 
+	height:100%; 
+}
+
 img{
 	vertical-align: middle;
 }
 
-ul{
-	padding:0 0 0 0;
-}
+
 
 li{
+	clear:both;
+	overflow: auto;
 	border-radius: 5px;
 	padding:10px;
 	margin:10px;
@@ -38,19 +39,29 @@ li{
 	list-style-position: inside;
 }
 
-li:hover{
-	background-color: #00648C;
-}
 section{
-	color:white;
+	color:#F0ECEF;
 	height: 100%;
 	background-color: #00AEEF;
 	padding: 20px 0 20px 50px;
 	float:left;
-	width:60%;
+	width:55%;
+}
+
+section li:hover{
+	background-color: #00648C;
+}
+
+section .movie-title:hover{
+	color:white;
+}
+
+ul{
+	padding:0 0 0 0;
 }
 
 .container{
+	position: relative;
 	border-radius: 5px;
 	margin: auto;
 	margin-top: 100px;
@@ -70,17 +81,30 @@ section{
 }
 
 .movie-poster{
+	margin-right: 10px;
+	float:left;
 	height:50px;
 }
 .movie-title{
 	padding-top: 10px;
 	padding-bottom: 10px; 
-	margin: 30px;
+	margin: 20px;
 	display: inline;
 	vertical-align: top;
 }
+
 #more-results{
+	width: 200px;
+	padding:20px;
+	border-radius: 5px;
 	visibility: hidden;
+	background-color: #00648C;
+	text-align: center;
+	margin:auto;
+	font-weight: bold;
+}
+#more-results:hover{
+	background-color: #004059;
 }
 
 #movie-input{

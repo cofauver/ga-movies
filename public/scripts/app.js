@@ -256,7 +256,7 @@ function createResultsListHtml(data) {
         }else{
         	html += '<img class="movie-poster" src="' + itemData.Poster + '">';
         }
-        html += '<div class="favorite"></div>';
+        html += '<div class="favorite" title="Click to add this movie to your favorites"></div>';
         html += '<h3 class="movie-title">' + itemData.Title +'</h3>';
         html += '<div id="' + itemData.imdbID + 'details"><div>';
         html += '</li>';
@@ -282,7 +282,6 @@ var html = '<ul>';
         	html += '<img class="movie-poster" src="' + itemData.Poster + '">';
         }
         html += '<h5 class="movie-title">' + itemData.Title +'</h5>';
-        html += '<div id="' + itemData.imdbID + 'details"><div>';
         html += '</li>';
     }  
     html += '</ul>';
